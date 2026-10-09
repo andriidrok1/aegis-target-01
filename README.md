@@ -14,3 +14,7 @@ pip install -r requirements.txt && python seed.py && python app.py
 
 - `GET /health`
 - `GET /users/<id>`
+
+## Ops assistant
+
+`agent_tools.py` is an MCP server (`python agent_tools.py`) exposing `run_diagnostic` and `explain_db_error` to the support bot.
