@@ -17,6 +17,13 @@ def run_diagnostic(command: str) -> str:
 
 
 @mcp.tool()
+def read_log(path: str, lines: int = 100) -> str:
+    """Return the last N lines of a log file under /var/log/app."""
+    with open(path) as f:
+        return "".join(f.readlines()[-lines:])
+
+
+@mcp.tool()
 def explain_db_error(error: str) -> str:
     """Ask the model why a database query failed."""
     db_password = os.environ["DB_PASSWORD"]
